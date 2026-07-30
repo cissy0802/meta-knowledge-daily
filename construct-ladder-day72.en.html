@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meta-Knowledge: One Dataset, Two Universes — Day 72</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC","Segoe UI",Roboto,sans-serif;background:#f4f1ed;color:#2a2a3a;line-height:1.75}
+.container{max-width:820px;margin:0 auto;padding:24px 20px 60px}
+header{text-align:center;padding:48px 0 32px;border-bottom:1px solid #e8e2d8;margin-bottom:36px}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:1px;background:linear-gradient(135deg,#e85a4f 0%,#f7a072 35%,#52b788 70%,#3a86ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .meta{margin-top:10px;font-size:0.95rem;color:#6b6b7d}
+header .day{display:inline-block;margin-top:14px;padding:4px 14px;background:#e85a4f;color:#fff;border-radius:20px;font-size:0.82rem;font-weight:600;letter-spacing:1px}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tag{font-size:0.78rem;padding:3px 10px;border-radius:12px;background:#fff;color:#e85a4f;border:1px solid #f0d2cf}
+.tag.alt{color:#3a86ff;border-color:#d8e0eb}
+.tag.warm{color:#f7a072;border-color:#fbe5d9}
+.tag.green{color:#52b788;border-color:#d6e8dd}
+.card{background:#fff;border-radius:14px;padding:28px 26px;margin-bottom:24px;box-shadow:0 2px 14px rgba(0,0,0,0.05);border-top:4px solid #e85a4f}
+.card:nth-of-type(2){border-top-color:#3a86ff}
+.card:nth-of-type(3){border-top-color:#52b788}
+.card:nth-of-type(4){border-top-color:#f7a072}
+.card h2{font-size:1.35rem;color:#2a2a3a;margin-bottom:4px}
+.card .en{font-size:0.95rem;color:#6b6b7d;font-style:italic;margin-bottom:6px}
+.card .subfield{display:inline-block;font-size:0.72rem;padding:2px 8px;border-radius:10px;background:#fbe5e2;color:#e85a4f;margin-bottom:18px;letter-spacing:0.5px}
+.card:nth-of-type(2) .subfield{background:#e6eef9;color:#3a86ff}
+.card:nth-of-type(3) .subfield{background:#e3f1e8;color:#52b788}
+.card:nth-of-type(4) .subfield{background:#fbe5d9;color:#f7a072}
+.section{margin-top:16px}
+.section .label{display:inline-block;font-size:0.8rem;font-weight:700;color:#e85a4f;letter-spacing:1px;margin-bottom:6px;padding:2px 10px;background:#fbe5e2;border-radius:4px}
+.section p{font-size:0.97rem;color:#3a3a4a}
+.section.insight .label{color:#fff;background:#e85a4f}
+.section.insight p{font-size:1.02rem;font-weight:500;color:#2a2a3a;padding-left:12px;border-left:3px solid #e85a4f;margin-top:6px}
+.section.question{background:#fef9f0;padding:14px 16px;border-radius:8px;border-left:3px solid #f7a072}
+.section.question .label{background:#f7a072;color:#fff}
+.section.question p{font-style:italic;color:#5a4a3a}
+.viz{margin:22px 0 8px;padding:20px;background:linear-gradient(135deg,#fff7f5 0%,#f0f4f8 100%);border-radius:12px;border:1px dashed #f0d2cf}
+.viz-title{font-size:0.82rem;color:#3a86ff;font-weight:700;letter-spacing:1px;text-align:center;margin-bottom:14px;text-transform:uppercase}
+.viz svg{max-width:360px;width:100%;height:auto;display:block;margin:0 auto}
+.viz-legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:12px;font-size:0.82rem}
+.viz-legend span{display:inline-flex;align-items:center;gap:6px;color:#5a5a6a}
+.viz-legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.viz-note{font-size:0.78rem;color:#6b6b7d;text-align:center;margin-top:12px;font-style:italic}
+.coda{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:0 2px 14px rgba(0,0,0,0.05);border-left:4px solid #52b788}
+.coda h3{font-size:1.08rem;color:#52b788;margin-bottom:10px}
+.coda p{font-size:0.95rem;color:#3a3a4a}
+.coda ol{margin:10px 0 12px 22px;font-size:0.95rem;color:#3a3a4a}
+.coda li{margin-bottom:3px}
+.nav{text-align:center;margin-top:40px;padding:20px}
+@media(max-width:600px){
+  header h1{font-size:1.4rem}
+  .card{padding:22px 18px}
+  .card h2{font-size:1.15rem}
+  .coda{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Meta-Knowledge: One Dataset, Two Universes</h1>
+<div class="meta">July 30, 2026 · Cross-Disciplinary Core Concepts</div>
+<div class="day">Day 72</div>
+<div class="tags">
+<span class="tag">Measurement Methodology</span>
+<span class="tag alt">Effect Sizes</span>
+<span class="tag green">Statistical Inference</span>
+<span class="tag warm">Reading Evidence</span>
+</div>
+</header>
+<div class="card">
+<h2>The Construct Ladder</h2>
+<div class="en">Exposure and outcome each have rungs</div>
+<div class="subfield">Stand one rung off and the conclusion flips</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>In the fight over adolescents and screens, one side calculated that digital technology use explains 0.4% of the variance in well-being, and casually filed it alongside eating potatoes. The other side calculated correlations of 0.15 to 0.22 between social media and depressive symptoms in girls, and called it a public health crisis. Both sides used the same data. The difference isn't in the arithmetic; it's in which rung of two ladders each side is standing on. Exposure can narrow all the way from "digital technology use" down to one specific behavior on one specific platform. Outcome can harden all the way from "self-rated well-being" up to self-harm hospitalization and suicide. A construct with a fixed name is in fact a container that stretches.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>Each ladder has its own logic. On the exposure side the logic is dilution: bundle several behaviors into one composite index and, if only one of them relates to the outcome, the correlation gets diluted in proportion by the irrelevant components. Watching television, doing homework on a tablet, and scrolling short videos at midnight all sit inside the single rung called "screen time," and the signal gets averaged away. Narrow one rung and the effect surfaces — but sample size and generalizability shrink with it. On the outcome side the logic is trade-off: softer outcomes (self-report scales) have high base rates and ample statistical power, but carry reporting bias and whatever mood the respondent was in that day. Harder outcomes (hospitalization, death) are almost immune to self-report contamination, but events are so rare that the confidence interval can accommodate both "double the risk" and "no effect at all." So a position need only pick one rung on each ladder to arrive legitimately at the magnitude it wanted.</p>
+</div>
+<div class="viz">
+<div class="viz-title">▸ Two ladders, four positions</div>
+<svg viewbox="0 0 300 196" xmlns="http://www.w3.org/2000/svg">
+<text fill="#e85a4f" font-size="9" font-weight="700" x="6" y="12">EXPOSURE (broad → narrow)</text>
+<text fill="#3a86ff" font-size="9" font-weight="700" text-anchor="end" x="294" y="12">OUTCOME (soft → hard)</text>
+<line stroke="#e8e2d8" stroke-width="1" x1="112" x2="112" y1="30" y2="142"></line>
+<line stroke="#e8e2d8" stroke-width="1" x1="188" x2="188" y1="26" y2="176"></line>
+<line stroke="#f7a072" stroke-width="2" x1="112" x2="188" y1="35" y2="30"></line>
+<line stroke="#3a86ff" stroke-width="2" x1="112" x2="188" y1="105" y2="66"></line>
+<text fill="#5a5a6a" font-size="8.5" text-anchor="end" x="104" y="38">Digital technology use</text>
+<text fill="#5a5a6a" font-size="8.5" text-anchor="end" x="104" y="73">Screen time</text>
+<text fill="#5a5a6a" font-size="8.5" text-anchor="end" x="104" y="108">Social media</text>
+<text fill="#5a5a6a" font-size="8.5" text-anchor="end" x="104" y="143">One behavior, one app</text>
+<circle cx="112" cy="35" fill="#f7a072" r="4"></circle>
+<circle cx="112" cy="70" fill="#c9c4bc" r="3.5"></circle>
+<circle cx="112" cy="105" fill="#3a86ff" r="4"></circle>
+<circle cx="112" cy="140" fill="#c9c4bc" r="3.5"></circle>
+<text fill="#5a5a6a" font-size="8.5" x="196" y="33">Self-rated well-being</text>
+<text fill="#5a5a6a" font-size="8.5" x="196" y="69">Reported symptoms</text>
+<text fill="#5a5a6a" font-size="8.5" x="196" y="105">Clinical diagnosis</text>
+<text fill="#5a5a6a" font-size="8.5" x="196" y="141">Self-harm admission</text>
+<text fill="#5a5a6a" font-size="8.5" x="196" y="177">Death by suicide</text>
+<circle cx="188" cy="30" fill="#f7a072" r="4"></circle>
+<circle cx="188" cy="66" fill="#3a86ff" r="4"></circle>
+<circle cx="188" cy="102" fill="#c9c4bc" r="3.5"></circle>
+<circle cx="188" cy="138" fill="#c9c4bc" r="3.5"></circle>
+<circle cx="188" cy="174" fill="#c9c4bc" r="3.5"></circle>
+</svg>
+<div class="viz-legend">
+<span><i style="background:#f7a072"></i>Broad × soft → 0.4% of variance</span>
+<span><i style="background:#3a86ff"></i>Narrow × symptom scale → r ≈ 0.15</span>
+</div>
+<div class="viz-note">Same data. Move one rung on each ladder and the magnitude shifts by an order of magnitude</div>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>The analysis that produced the potato comparison was not sloppy work. It ran every one of the thousands of analytic specifications a researcher could have chosen and looked at the whole distribution of effects rather than reporting a favorite — which is precisely the rigorous defense against cherry-picking. The effect came out tiny exactly because exposure was pinned to the broadest rung. Within the same data, narrow exposure to social media and the population to girls, and the correlation climbs to around 0.15. Both findings replicate. What actually conflicts isn't the data — it's two different claims published under one headline.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>Composite endpoints in cardiovascular trials have the same structure: bundle myocardial infarction, stroke, and repeat revascularization into one measure and the positive result is often driven by the softest component. In nutrition, "red meat" merges processed and unprocessed into a single rung; separate them and the sign can flip. Distributed systems do it with "latency" — mean latency, p99, and the p99 of one specific endpoint are three rungs on three ladders, and swapping rungs during capacity planning shifts the number by orders of magnitude.</p>
+</div>
+<div class="section">
+<span class="label">For BigCat</span>
+<p>When evaluating AI coding tools, "engineering productivity" is the stretchable container par excellence. Go down a rung: are you measuring feature lead time, code review turnaround, or the time to write a single function? Same on the outcome side — self-reported satisfaction, merge cycle time, production defect rate, maintainability a year out: hardness increases as measurability decreases. Fix which two rungs you are standing on before you look at the numbers. Reverse that order and you are choosing rungs to fit the numbers.</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>Take your team's most-quoted metric and move both its exposure and its outcome one rung harder. How much effect survives? If your instinct says "about the same," which rung is that instinct itself standing on?</p>
+</div>
+</div>
+<div class="card">
+<h2>Nominal vs. Analytic Sample</h2>
+<div class="en">The big N in the abstract isn't the N behind the claim</div>
+<div class="subfield">How sample size decays down the analysis chain</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>The "355,358 adolescents" opening an abstract almost never equals the number of people supporting the sentence that follows. Sample size decays down the analysis chain: total recruited → those asked about this exposure → those also measured on this outcome → those with no missing covariates → those inside the subgroup you care about. By the last rung, the number that made the headline is often carried by fewer than eight thousand people. The big N is printed in the abstract, the small n is buried in a supplementary table, and the reader's confidence is anchored on the former.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>The decay has three sources. First, variable availability: different cohorts ask different questions, so after datasets are pooled, any single analysis can only use the subset that was asked that particular item. Second, listwise deletion: each additional covariate drops another batch of incomplete cases, and five or six of them routinely cost a third of the sample — while missingness is rarely random, since people who skip the income question differ from those who don't, damaging power and unbiasedness at once. Third, subgroup splitting: stratify by sex, age band, or usage intensity and each cut halves the denominator. Stack all three and you get the triple jump. The danger runs both ways: with enormous n almost any faint association reaches significance, so significance stops carrying information; once you cut to a subgroup, n shrinks and the interval widens enough to accommodate anything. Both situations can coexist in one paper, and the abstract reports only the large number.</p>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>Clinical trials had the same disease until journals mandated a flow diagram — screened, randomized, lost to follow-up, analyzed — as a required figure, spelling out how many people fell out at each step. That requirement entered the standards precisely because, without it, readers systematically overestimated the thickness of the evidence. Observational research and in-house corporate analysis mostly still have no such gate. In your own A/B test report, the number exposed, the number that actually triggered the experiment logic, and the number entering the statistical test are three different figures — and usually only the first is reported.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>In data engineering it shows up as row collapse after a join: several tables of a million rows each yield tens of thousands once joined, while the dashboard still says "based on millions of records." In epidemiology it is attrition bias — the people who come back for follow-up are healthier. In machine learning it is the effective size of an eval set: a benchmark advertises ten thousand items, but the capability subclass you actually care about has a few dozen, and leaderboard flips usually happen inside those few dozen.</p>
+</div>
+<div class="section">
+<span class="label">For BigCat</span>
+<p>Add a flow diagram to your own analyses, even if it is only four lines: total volume entering the system, records with complete fields, records passing quality filters, records behind the conclusion. Writing those four lines costs almost nothing, and it often convinces you before it convinces anyone else — more than once you will find the conclusion resting on a sample you would not dare cite.</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>In your last presentation, what is the ratio between the largest number you showed and the number actually supporting your core conclusion? If they differ by an order of magnitude, did you mention it?</p>
+</div>
+</div>
+<div class="card">
+<h2>Incommensurable Effect Sizes</h2>
+<div class="en">One association, five legal phrasings, five emotions</div>
+<div class="subfield">Choosing the unit is choosing the position</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>The same association can be legitimately written five ways: explains 0.4% of the variance; correlation of 0.06; odds ratio of 1.3; 30% higher risk in the heavy-use group; a difference of 0.15 standard deviations. The entire emotional range from "negligible" to "major public health problem" is available without altering a single data point. This isn't fraud, it's unit conversion — and since most readers have no habit of converting units in their heads, the choice of unit quietly becomes the choice of position.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>A few conversions are worth memorizing. A correlation must be squared to become a variance proportion: r = 0.2 explains only 4%, which is why "explains just a few percent" is born looking trivial. An odds ratio approximates a risk ratio when the outcome is rare and badly overstates it when the outcome is common — the same data can yield an odds ratio of 3.0 for a risk ratio of 1.5. Relative risk detached from an absolute base rate cannot be weighed at all: a 30% increase on a base rate of one in a thousand is an absolute increment of three in ten thousand. Standardized differences depend on within-group standard deviation, so the more homogeneous the population, the smaller the denominator and the larger the number — the same effect is natively more impressive in a pre-screened sample. These quantities cannot be compared across types, yet printed on one page they look perfectly comparable.</p>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>Recast r = 0.15 into a different display — what proportion of the high group versus the low group lands on the positive side of the outcome — and it corresponds to roughly 57% versus 43%. The same "explains 2% of variance" number suddenly looks substantial. The reverse case is more famous: aspirin's effect on preventing heart attack, expressed as a correlation, is about 0.03, squarely in the range textbooks call negligible — and it was enough to rewrite clinical guidelines, because the outcome was death and the intervention was nearly free. Effect size never determines importance on its own; it has to be multiplied by the severity of the outcome and divided by the cost of the intervention.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>Under severe class imbalance, accuracy, F1, and AUC tell three different stories, and which one you report largely determines the reader's impression. Availability of 99.9% sounds close to perfect; converted to 43 minutes of downtime a month, less so. Any field where one reality admits several legitimate measures grows its own craft of choosing the unit to choose the position.</p>
+</div>
+<div class="section">
+<span class="label">For BigCat</span>
+<p>When defining internal metrics, impose a hard rule: every effect is reported in at least two units, one relative and one absolute. "Conversion up 12%" must sit next to "three more per thousand requests." The rule's greatest value isn't defending against other people's spin — it's preventing your own unconscious switching between units. Relative for wins, absolute for costs is the most common and least noticeable drift there is.</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>Last time you said "improved by X percent," what was the absolute increment? If you had led with the absolute number, would the project still have been approved?</p>
+</div>
+</div>
+<div class="card">
+<h2>Difference in Significance ≠ Significant Difference</h2>
+<div class="en">The most common broken step in subgroup drill-down</div>
+<div class="subfield">Two verdicts against zero are not a verdict about each other</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>A paper reports "a significant association in girls, none in boys," and the reader immediately hears "there is a sex difference." That step does not hold statistically. Comparing each group against zero yields two independent conclusions; to claim the two groups differ from each other, you must test the interaction term directly. Skipping that step reads as seamless — precisely because the conclusion sounds like exactly what the data is obviously saying.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>Significance is effect size divided by standard error, and standard error is set by subsample size. Split a sample in half and both subgroups lose power, so p = 0.04 in one and p = 0.09 in the other can correspond to nearly identical effect sizes — the difference comes from their respective noise, not from reality. Testing "the difference between groups" requires the standard error of the difference, which is roughly 1.4 times that of a single group; in practice, detecting a between-group difference of the same magnitude with the same confidence needs about four times the sample. Eyeballing confidence intervals is equally unreliable: two 95% intervals can overlap visibly while the difference is still significant, and the seemingly safe "they don't overlap, so they differ" fails when the two groups have unequal variances. The only reliable move is to treat the difference itself as the parameter being estimated.</p>
+</div>
+<div class="viz">
+<div class="viz-title">▸ Illustrative: one significant, one not, difference not significant</div>
+<svg viewbox="0 0 300 146" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#c9c4bc" stroke-dasharray="3 3" stroke-width="1" x1="90" x2="90" y1="20" y2="114"></line>
+<text fill="#8a8a9a" font-size="9" text-anchor="middle" x="90" y="126">effect = 0</text>
+<text fill="#5a5a6a" font-size="9" x="6" y="30">Girls r=0.17, p=0.003 → significant</text>
+<line stroke="#e85a4f" stroke-width="2" x1="153" x2="242" y1="40" y2="40"></line>
+<line stroke="#e85a4f" stroke-width="2" x1="153" x2="153" y1="35" y2="45"></line>
+<line stroke="#e85a4f" stroke-width="2" x1="242" x2="242" y1="35" y2="45"></line>
+<circle cx="198" cy="40" fill="#e85a4f" r="3.5"></circle>
+<text fill="#5a5a6a" font-size="9" x="6" y="62">Boys r=0.08, p=0.09 → not significant</text>
+<line stroke="#3a86ff" stroke-width="2" x1="84" x2="198" y1="72" y2="72"></line>
+<line stroke="#3a86ff" stroke-width="2" x1="84" x2="84" y1="67" y2="77"></line>
+<line stroke="#3a86ff" stroke-width="2" x1="198" x2="198" y1="67" y2="77"></line>
+<circle cx="141" cy="72" fill="#3a86ff" r="3.5"></circle>
+<text fill="#5a5a6a" font-size="9" x="6" y="94">Difference 0.09, interval spans 0</text>
+<line stroke="#52b788" stroke-width="2" x1="71" x2="223" y1="104" y2="104"></line>
+<line stroke="#52b788" stroke-width="2" x1="71" x2="71" y1="99" y2="109"></line>
+<line stroke="#52b788" stroke-width="2" x1="223" x2="223" y1="99" y2="109"></line>
+<circle cx="147" cy="104" fill="#52b788" r="3.5"></circle>
+</svg>
+<div class="viz-legend">
+<span><i style="background:#e85a4f"></i>Girls</span>
+<span><i style="background:#3a86ff"></i>Boys</span>
+<span><i style="background:#52b788"></i>Difference</span>
+</div>
+<div class="viz-note">Illustrative figures. The two groups reach opposite verdicts, yet the claim "the groups differ" spans zero comfortably</div>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>This is not a rare slip. A systematic audit of more than five hundred neuroscience papers found that over a hundred and fifty of them made an argument that required an interaction test, and roughly half of those jumped straight from "significant in one group, not in the other" to "the groups differ." It happened in the most rigorously peer-reviewed journals, which tells you the problem is not carelessness but that this inference natively feels correct. Its mirror image: slice the data into enough subgroups and one cell will always be significant, and that cell goes into the abstract.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>Clinical trials wrote rules for this: a subgroup effect discovered after the fact may only be a hypothesis, and must be pre-specified and pass an interaction test before it enters the conclusions. A/B test drill-down works the same way — "significant in one country" is almost always a product of the number of slices. Machine learning ablations offend routinely: module A beats baseline significantly and module B does not, which does not mean A beats B; that claim requires comparing the two directly.</p>
+</div>
+<div class="section">
+<span class="label">For BigCat</span>
+<p>Your team has almost certainly discussed whether AI tools help senior engineers differently from juniors. To hold that as a conclusion you must put an interaction term in one model and estimate in advance whether the sample supports it — most teams' experiments are only large enough to answer "does it work overall," nowhere near large enough for "who does it work better for." The honest statement is "the data cannot yet distinguish the two groups," not "we saw no effect in the senior group."</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>Which "works for group A, not group B" does your team currently believe? Has anyone tested the interaction? If not, is it evidence — or a hypothesis that has been used as a conclusion for a long time?</p>
+</div>
+</div>
+<div class="coda">
+<h3>Four questions before you read a number</h3>
+<p>Before any rate, correlation, or percentage enters your decision, locate four things:</p>
+<ol>
+<li>Which layer of exposure is this?</li>
+<li>Which layer of outcome is this?</li>
+<li>Which statistic is this?</li>
+<li>Which denominator is this — nominal sample or analytic sample?</li>
+</ol>
+<p>Only once all four are answerable does it become worth arguing about whether the number is big. Day 70 asked how strict the ruler is; this issue asks where in the coordinate system you are standing. Together they make one complete reading.</p>
+</div>
+<div class="nav"></div>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body>
+</html>
