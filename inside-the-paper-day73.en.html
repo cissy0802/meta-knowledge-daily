@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meta-Knowledge: One Paper, Different Answers — Day 73</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC","Segoe UI",Roboto,sans-serif;background:#f4f1ed;color:#2a2a3a;line-height:1.75}
+.container{max-width:820px;margin:0 auto;padding:24px 20px 60px}
+header{text-align:center;padding:48px 0 32px;border-bottom:1px solid #e8e2d8;margin-bottom:36px}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:1px;background:linear-gradient(135deg,#e85a4f 0%,#f7a072 35%,#52b788 70%,#3a86ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .meta{margin-top:10px;font-size:0.95rem;color:#6b6b7d}
+header .day{display:inline-block;margin-top:14px;padding:4px 14px;background:#e85a4f;color:#fff;border-radius:20px;font-size:0.82rem;font-weight:600;letter-spacing:1px}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tag{font-size:0.78rem;padding:3px 10px;border-radius:12px;background:#fff;color:#e85a4f;border:1px solid #f0d2cf}
+.tag.alt{color:#3a86ff;border-color:#d8e0eb}
+.tag.warm{color:#f7a072;border-color:#fbe5d9}
+.tag.green{color:#52b788;border-color:#d6e8dd}
+.card{background:#fff;border-radius:14px;padding:28px 26px;margin-bottom:24px;box-shadow:0 2px 14px rgba(0,0,0,0.05);border-top:4px solid #e85a4f}
+.card:nth-of-type(2){border-top-color:#3a86ff}
+.card:nth-of-type(3){border-top-color:#52b788}
+.card:nth-of-type(4){border-top-color:#f7a072}
+.card h2{font-size:1.35rem;color:#2a2a3a;margin-bottom:4px}
+.card .en{font-size:0.95rem;color:#6b6b7d;font-style:italic;margin-bottom:6px}
+.card .subfield{display:inline-block;font-size:0.72rem;padding:2px 8px;border-radius:10px;background:#fbe5e2;color:#e85a4f;margin-bottom:18px;letter-spacing:0.5px}
+.card:nth-of-type(2) .subfield{background:#e6eef9;color:#3a86ff}
+.card:nth-of-type(3) .subfield{background:#e3f1e8;color:#52b788}
+.card:nth-of-type(4) .subfield{background:#fbe5d9;color:#f7a072}
+.section{margin-top:16px}
+.section .label{display:inline-block;font-size:0.8rem;font-weight:700;color:#e85a4f;letter-spacing:1px;margin-bottom:6px;padding:2px 10px;background:#fbe5e2;border-radius:4px}
+.section p{font-size:0.97rem;color:#3a3a4a}
+.section.insight .label{color:#fff;background:#e85a4f}
+.section.insight p{font-size:1.02rem;font-weight:500;color:#2a2a3a;padding-left:12px;border-left:3px solid #e85a4f;margin-top:6px}
+.section.question{background:#fef9f0;padding:14px 16px;border-radius:8px;border-left:3px solid #f7a072}
+.section.question .label{background:#f7a072;color:#fff}
+.section.question p{font-style:italic;color:#5a4a3a}
+.viz{margin:22px 0 8px;padding:20px;background:linear-gradient(135deg,#fff7f5 0%,#f0f4f8 100%);border-radius:12px;border:1px dashed #f0d2cf}
+.viz-title{font-size:0.82rem;color:#3a86ff;font-weight:700;letter-spacing:1px;text-align:center;margin-bottom:14px;text-transform:uppercase}
+.viz svg{max-width:360px;width:100%;height:auto;display:block;margin:0 auto}
+.viz-legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:12px;font-size:0.82rem}
+.viz-legend span{display:inline-flex;align-items:center;gap:6px;color:#5a5a6a}
+.viz-legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.viz-note{font-size:0.78rem;color:#6b6b7d;text-align:center;margin-top:12px;font-style:italic}
+.coda{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:0 2px 14px rgba(0,0,0,0.05);border-left:4px solid #52b788}
+.coda h3{font-size:1.08rem;color:#52b788;margin-bottom:10px}
+.coda p{font-size:0.95rem;color:#3a3a4a}
+.coda ol{margin:10px 0 12px 22px;font-size:0.95rem;color:#3a3a4a}
+.coda li{margin-bottom:3px}
+.nav{text-align:center;margin-top:40px;padding:20px}
+@media(max-width:600px){
+  header h1{font-size:1.4rem}
+  .card{padding:22px 18px}
+  .card h2{font-size:1.15rem}
+  .coda{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Meta-Knowledge: One Paper, Different Answers</h1>
+<div class="meta">August 21, 2026 · Cross-Disciplinary Core Concepts</div>
+<div class="day">Day 73</div>
+<div class="tags">
+<span class="tag">Reading Evidence</span>
+<span class="tag alt">Science Communication</span>
+<span class="tag green">Measurement</span>
+<span class="tag warm">Causal Inference</span>
+</div>
+</header>
+<div class="card">
+<h2>Abstract ≠ Findings</h2>
+<div class="en">The most-read part of a paper is the least-audited part</div>
+<div class="subfield">Distortion begins inside the paper, not in the retelling</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>We assume the abstract is a faithful compression of the body. But the abstract is the one part of a paper written to be read. In a study of index-membership effects, the abstract reports roughly +0.1% for deletions while the paper's own first table reports −0.62% — not a difference in magnitude, a difference in sign. In a study of exchange-traded funds, the abstract offers a "16%" increase in volatility; in the body that means 16% of a standard deviation, which works out to about twenty basis points — and the published version quietly dropped the sentence that explained this. Almost every secondhand citation stops at the abstract. So the distortion does not wait for the retelling; it is already complete inside the paper.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>Three forces stack. First, division of labor: the abstract is usually written last and finalized by the corresponding author, while the tables come from whoever ran the analysis, and nobody owns the line-by-line reconciliation between them — peer review rarely does it either. Second, incentives: the abstract determines whether the paper gets opened and whether it gets a press release, so any phrasing that makes the conclusion cleaner is rewarded, and rewarded legitimately. Third, compression is lossy: squeeze "in this subsample, after controlling for these covariates, measured by this proxy" into a single declarative sentence and the conditions go first, the qualifiers second, leaving a claim that is both stronger and easier to misuse. What makes this hard to catch is that it leaves no trace — the abstract reads as entirely self-consistent, and only the table reveals the crack.</p>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>Repeated systematic audits of medical journals keep finding the same thing: in a substantial share of papers, the abstract does not match the results in the body — a prettier secondary outcome swapped in for the primary one, a marginal result written up as a firm conclusion, a number reported that appears nowhere in the full text. The finding is stable enough that journals wrote a dedicated reporting standard for abstracts. Note what that really means: this is not a signature of fraudulent papers. It is the normal condition of papers that passed peer review.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>The software analogue is the README and the code: the README states intent, the code executes reality, and the two drift at different rates. In financial reporting, every adjustment behind an "adjusted" figure sits in the footnotes while the market reads only the headline line. Model cards work the same way: the benchmark score is printed at the top, the evaluation protocol is buried below.</p>
+</div>
+<div class="section">
+<span class="label">Application for BigCat</span>
+<p>When your team cites papers in technical decisions, adopt one nearly free rule: any number entering a decision must be located in the body — which table, which row, which specification. If it can't be located, it can't go in the document. What this filters out is abstract-grade evidence, and abstract-grade evidence is exactly what gets overturned hardest in architecture choices.</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>The last time a paper changed your technical judgment, did you open its results table? If not, what convinced you — the study, or its abstract?</p>
+</div>
+</div>
+<div class="card">
+<h2>Version Drift</h2>
+<div class="en">The number you cite may belong to a draft the authors already revised</div>
+<div class="subfield">Two versions of one finding, circulating at once</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>Between the working paper and the published version sits a round of revision, and numbers move in that round: 15% becomes 11%, 37.8% becomes 33.5%. Authors treat this as ordinary manuscript improvement, not worth announcing. The trouble is that during the intervening year or two the working paper has already been covered by the press, pasted into slide decks, and written into other people's introductions. So one finding exists in two circulating versions — and the older one usually travels further, because it came first, landed louder, and carried the bigger number.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>The lag is structural. Preprints and working papers go public one to two years before formal publication, precisely during the window when the topic is hottest and most citable; by the time the published version corrects the number, attention has moved on. Citation chains have inertia once formed: A cites the working paper, B cites A, C cites B, and by C nobody returns to the source — yet every layer appears to have one. Subtler still is the silent edit: the published version deletes a qualifier or switches a definition with no change log at all. A formal retraction at least carries a conspicuous mark. Version drift carries none.</p>
+</div>
+<div class="viz">
+<div class="viz-title">▸ Two versions, one one-way citation chain</div>
+<svg viewbox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+<text fill="#e85a4f" font-size="9" font-weight="700" x="6" y="16">The old number keeps traveling</text>
+<line stroke="#e85a4f" stroke-width="2" x1="78" x2="278" y1="46" y2="46"></line>
+<circle cx="78" cy="46" fill="#e85a4f" r="5"></circle>
+<circle cx="145" cy="46" fill="#e85a4f" r="3.5"></circle>
+<circle cx="208" cy="46" fill="#e85a4f" r="3.5"></circle>
+<circle cx="268" cy="46" fill="#e85a4f" r="3.5"></circle>
+<text fill="#5a5a6a" font-size="8.5" text-anchor="end" x="70" y="50">Working paper 15%</text>
+<text fill="#8a8a9a" font-size="8" text-anchor="middle" x="145" y="36">press</text>
+<text fill="#8a8a9a" font-size="8" text-anchor="middle" x="208" y="36">secondhand cite</text>
+<text fill="#8a8a9a" font-size="8" text-anchor="middle" x="266" y="36">your doc</text>
+<line stroke="#c9c4bc" stroke-dasharray="3 3" stroke-width="1" x1="78" x2="78" y1="54" y2="106"></line>
+<text fill="#8a8a9a" font-size="8" x="86" y="84">revised to 11% in review</text>
+<circle cx="78" cy="114" fill="#3a86ff" r="5"></circle>
+<line stroke="#3a86ff" stroke-width="2" x1="78" x2="150" y1="114" y2="114"></line>
+<text fill="#5a5a6a" font-size="8.5" text-anchor="end" x="70" y="118">Published 11%</text>
+<text fill="#8a8a9a" font-size="8" x="158" y="117">barely cited</text>
+</svg>
+<div class="viz-legend">
+<span><i style="background:#e85a4f"></i>Working paper (earlier, travels far)</span>
+<span><i style="background:#3a86ff"></i>Published (corrected, rarely revisited)</span>
+</div>
+<div class="viz-note">Each version has its own identifier; search usually surfaces the more-cited older one first</div>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>Both versions of one study can coexist for years and both can be cited legitimately: the working paper has a stable number, the published article has another, and search tends to surface the more-cited older one first. Which means "this number has a source" and "this number is the current version" are two different claims — and the harder and more authoritative the source looks, the more readily people skip the check. Verifiability becomes the excuse for not verifying.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>In technical documentation, old version pages outrank current ones in search for years, and teams break things by following a two-year-old config example. In data warehouses it appears as definition changes: the metric was redefined, the old dashboard still runs the old logic, and both numbers show up in the same meeting. Model evaluation is the same — which weights, which harness version produced a given score is usually recorded nowhere.</p>
+</div>
+<div class="section">
+<span class="label">Application for BigCat</span>
+<p>When an external number enters a decision document, write down which version it came from and when it was pulled. This is not academic fussiness; it leaves your future self an audit entry. Six months later someone asks "does this 30% still hold?" — a version-stamped number takes ten minutes to verify, an unstamped one has to be redone from scratch. The cost is three seconds of typing.</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>The external number cited most often in your team's documents — preprint or published version? When did you last check?</p>
+</div>
+</div>
+<div class="card">
+<h2>Proxy Families and Constructed Numbers</h2>
+<div class="en">Five numbers in one table, one of them in the headline</div>
+<div class="subfield">Full disclosure does not prevent misreading</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>A concept usually has a family of proxy measures, and authors run all of them and list them in one table — a transparent practice. But an abstract holds only one number. When five proxies in that same table run from 13.31% all the way to 33.5%, and the one that reaches the abstract and the press release is the largest while the one the authors call their preferred specification in the body is somewhere in the middle, transparency is cancelled by the headline. Further: some "numbers" are not estimates at all but constructions. A percentage obtained by equal-weighting several measures looks like a measurement result; it is the product of a weighting choice. Normalize by standard deviation instead and the same underlying figures move from one quarter to one sixth.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>The spread across a proxy family carries information in itself: a tight spread means the conclusion does not depend on the choice of measure, a wide spread means the conclusion is mostly driven by that choice. Reporting a single point erases exactly this — information often more important than the point estimate. Constructions go a layer deeper: every step of a composite index (which components, how to standardize, how to weight) is a researcher degree of freedom, and those steps are typically documented only in the methods or the appendix. Equal weighting embeds the strong assumption that every component matters equally and is commensurable, an assumption almost never tested. So the reader sees a percentage with two decimal places, instinctively treats it as a measurement, and it is in fact a model.</p>
+</div>
+<div class="viz">
+<div class="viz-title">▸ Five proxies, one table</div>
+<svg viewbox="0 0 300 128" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#e8e2d8" stroke-width="1.5" x1="34" x2="278" y1="72" y2="72"></line>
+<circle cx="40" cy="72" fill="#c9c4bc" r="4"></circle>
+<circle cx="98" cy="72" fill="#c9c4bc" r="4"></circle>
+<circle cx="156" cy="72" fill="#52b788" r="5.5"></circle>
+<circle cx="212" cy="72" fill="#c9c4bc" r="4"></circle>
+<circle cx="272" cy="72" fill="#e85a4f" r="5.5"></circle>
+<text fill="#5a5a6a" font-size="9" text-anchor="middle" x="40" y="90">13.31%</text>
+<text fill="#5a5a6a" font-size="9" text-anchor="middle" x="268" y="90">33.5%</text>
+<text fill="#52b788" font-size="8" font-weight="700" text-anchor="middle" x="156" y="56">authors' preferred</text>
+<text fill="#e85a4f" font-size="8" font-weight="700" text-anchor="end" x="288" y="56">abstract &amp; press release</text>
+<text fill="#8a8a9a" font-size="8" x="34" y="112">same data · same table · different specification</text>
+</svg>
+<div class="viz-legend">
+<span><i style="background:#52b788"></i>Preferred specification</span>
+<span><i style="background:#e85a4f"></i>The one that traveled</span>
+</div>
+<div class="viz-note">All five were disclosed; only the largest reached the world</div>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>Notice that the authors hid nothing: all five proxies are in the table, the preferred specification is stated in the body, the normalization is spelled out in the methods. Everything is disclosed and the distortion happens anyway — because the transmission channel carries only the one number in the abstract. Which shows that "disclose the full analysis" is not sufficient against misreading; you also need "the headline conclusion may use only the pre-declared specification." That is exactly why clinical research requires preregistration to lock the primary outcome: what it constrains is not the freedom to analyze, but the freedom to choose after the fact.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>Machine learning benchmarks are the nearest analogue: report the best of ten tasks, or report the mean of ten — the latter is equally a construction, and a different normalization reshuffles the ranking. University rankings flip when weights change, and the weight table never makes the headline. Composite performance scores work the same way: components and weights decide who comes out on top, while the discussion circles the final score.</p>
+</div>
+<div class="section">
+<span class="label">Application for BigCat</span>
+<p>Evaluating an AI coding tool will hand you a family of measures: time to completion, review rounds, defect rate, subjective satisfaction. Set one rule up front: before the data arrives, write down which one is primary and treat the rest as supporting. Choosing after the data lands does not produce a conclusion, it produces an act of self-persuasion. If you must report a composite, report the spread of its components alongside — the spread is the evidence for whether the composite deserves trust.</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>Take a composite score from your last review. Under a different but equally defensible weighting, does the ranking change? If it does, did you explain how the weights were set?</p>
+</div>
+</div>
+<div class="card">
+<h2>The Deleted Mechanism Section</h2>
+<div class="en">Publication strips the explanation and leaves the correlation</div>
+<div class="subfield">What gets cut is exactly what licensed the causal reading</div>
+<div class="section insight">
+<span class="label">Core Insight</span>
+<p>Some working papers contain an entire section on mechanism: through which channels the effect operates, which alternative explanations were ruled out. In the published version that section is deleted whole — usually for length, or because a referee judged the evidence there too weak. What remains is a clean reduced-form association: X correlates with Y by so much. And readers, especially secondhand readers, automatically read it as causal. What was cut is precisely the only part that could support a causal reading, and after the cut the causal reading flows more freely than before — nothing on the page reminds you the mechanism is still unestablished.</p>
+</div>
+<div class="section">
+<span class="label">Mechanism</span>
+<p>A reduced-form estimate answers "how large is the total effect," not "through what." The mechanism section decomposes the total, tests mediating paths, and rules out confounding channels; once it is gone, the causal claim rests entirely on the research design — natural experiment, instrumental variable, discontinuity — and the credibility of a design lives in the methods, which fewer people read. There is a selection effect on top: mechanism analyses often show a smaller effect than the reduced form, or an effect operating through only some channels, and precisely those unfavorable results are the easiest for referee comments and length limits to squeeze out. The publication process therefore leans systematically toward keeping the clean association and cutting the messy mechanism.</p>
+</div>
+<div class="section">
+<span class="label">Counterintuitive Example</span>
+<p>The result is a strange inversion: the more thoroughly a paper explains its mechanism, the more uncertainty it exposes, and the harder it becomes to publish and to circulate; the more it reports a single clean association, the more readily it is cited as causal evidence. That explains why so many widely cited "X causes Y" claims have no corresponding mechanism evidence — not because nobody did the work, but because the part that was done got trimmed off in the publication pipeline. The deletion leaves no trace: what the reader sees is a complete, crisply written paper.</p>
+</div>
+<div class="section">
+<span class="label">Cross-Disciplinary Transfer</span>
+<p>In accident investigation, delete the root-cause analysis and leave a list of contributing factors, and readers supply the causation themselves — then change process on that basis. When an A/B test writeup reports the headline lift without the funnel decomposition, the team will invent a mechanism story and believe it. Surrogate endpoints in medicine are the same structure: the marker improved, and nobody validated the chain from marker to hard outcome. Observability too — metric curves without distributed traces, and people read temporal correlation as cause.</p>
+</div>
+<div class="section">
+<span class="label">Application for BigCat</span>
+<p>When you write up an experiment, keep the section titled "alternative explanations we checked," even when the answer is "could not rule out." It makes the document longer and the conclusion look weaker, and it is the only reason that document will still stand six months later. Reading someone else's report, look for that section first; if it isn't there, downgrade the conclusion to correlation. The downgrade is free. Mistaking correlation for causation usually takes a quarter to surface.</p>
+</div>
+<div class="section question">
+<span class="label">Question</span>
+<p>The last time your team said a change "drove" a metric improvement, was the mechanism articulated? If it wasn't, are you willing to rewrite "drove" as "correlated with"?</p>
+</div>
+</div>
+<div class="coda">
+<h3>A four-step check before a number enters a decision</h3>
+<p>Before a figure counts as evidence, ask which part of the paper it is speaking from:</p>
+<ol>
+<li>Which version am I reading — working paper or published?</li>
+<li>Where does this abstract number sit in the body? Do the sign and magnitude match?</li>
+<li>Is it an estimate, or a construction assembled from several measures?</li>
+<li>Which specification did the authors themselves prefer, and is it the one that traveled?</li>
+</ol>
+<p>Day 70 asked how strict the ruler is, Day 72 asked which coordinates you are standing on, and this one asks which part of the paper is speaking. Together the three let you judge whether a number deserves a place in your decision — without redoing the research.</p>
+</div>
+<div class="nav"></div>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body>
+</html>

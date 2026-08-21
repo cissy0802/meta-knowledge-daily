@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>元知识详解：同一篇论文，不同的答案 — Day 73</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC","Segoe UI",Roboto,sans-serif;background:#f4f1ed;color:#2a2a3a;line-height:1.75}
+.container{max-width:820px;margin:0 auto;padding:24px 20px 60px}
+header{text-align:center;padding:48px 0 32px;border-bottom:1px solid #e8e2d8;margin-bottom:36px}
+header h1{font-size:1.9rem;font-weight:800;letter-spacing:1px;background:linear-gradient(135deg,#e85a4f 0%,#f7a072 35%,#52b788 70%,#3a86ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .meta{margin-top:10px;font-size:0.95rem;color:#6b6b7d}
+header .day{display:inline-block;margin-top:14px;padding:4px 14px;background:#e85a4f;color:#fff;border-radius:20px;font-size:0.82rem;font-weight:600;letter-spacing:1px}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tag{font-size:0.78rem;padding:3px 10px;border-radius:12px;background:#fff;color:#e85a4f;border:1px solid #f0d2cf}
+.tag.alt{color:#3a86ff;border-color:#d8e0eb}
+.tag.warm{color:#f7a072;border-color:#fbe5d9}
+.tag.green{color:#52b788;border-color:#d6e8dd}
+.card{background:#fff;border-radius:14px;padding:28px 26px;margin-bottom:24px;box-shadow:0 2px 14px rgba(0,0,0,0.05);border-top:4px solid #e85a4f}
+.card:nth-of-type(2){border-top-color:#3a86ff}
+.card:nth-of-type(3){border-top-color:#52b788}
+.card:nth-of-type(4){border-top-color:#f7a072}
+.card h2{font-size:1.35rem;color:#2a2a3a;margin-bottom:4px}
+.card .en{font-size:0.95rem;color:#6b6b7d;font-style:italic;margin-bottom:6px}
+.card .subfield{display:inline-block;font-size:0.72rem;padding:2px 8px;border-radius:10px;background:#fbe5e2;color:#e85a4f;margin-bottom:18px;letter-spacing:0.5px}
+.card:nth-of-type(2) .subfield{background:#e6eef9;color:#3a86ff}
+.card:nth-of-type(3) .subfield{background:#e3f1e8;color:#52b788}
+.card:nth-of-type(4) .subfield{background:#fbe5d9;color:#f7a072}
+.section{margin-top:16px}
+.section .label{display:inline-block;font-size:0.8rem;font-weight:700;color:#e85a4f;letter-spacing:1px;margin-bottom:6px;padding:2px 10px;background:#fbe5e2;border-radius:4px}
+.section p{font-size:0.97rem;color:#3a3a4a}
+.section.insight .label{color:#fff;background:#e85a4f}
+.section.insight p{font-size:1.02rem;font-weight:500;color:#2a2a3a;padding-left:12px;border-left:3px solid #e85a4f;margin-top:6px}
+.section.question{background:#fef9f0;padding:14px 16px;border-radius:8px;border-left:3px solid #f7a072}
+.section.question .label{background:#f7a072;color:#fff}
+.section.question p{font-style:italic;color:#5a4a3a}
+.viz{margin:22px 0 8px;padding:20px;background:linear-gradient(135deg,#fff7f5 0%,#f0f4f8 100%);border-radius:12px;border:1px dashed #f0d2cf}
+.viz-title{font-size:0.82rem;color:#3a86ff;font-weight:700;letter-spacing:1px;text-align:center;margin-bottom:14px;text-transform:uppercase}
+.viz svg{max-width:360px;width:100%;height:auto;display:block;margin:0 auto}
+.viz-legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:12px;font-size:0.82rem}
+.viz-legend span{display:inline-flex;align-items:center;gap:6px;color:#5a5a6a}
+.viz-legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.viz-note{font-size:0.78rem;color:#6b6b7d;text-align:center;margin-top:12px;font-style:italic}
+.coda{background:#fff;border-radius:14px;padding:24px 26px;box-shadow:0 2px 14px rgba(0,0,0,0.05);border-left:4px solid #52b788}
+.coda h3{font-size:1.08rem;color:#52b788;margin-bottom:10px}
+.coda p{font-size:0.95rem;color:#3a3a4a}
+.coda ol{margin:10px 0 12px 22px;font-size:0.95rem;color:#3a3a4a}
+.coda li{margin-bottom:3px}
+.nav{text-align:center;margin-top:40px;padding:20px}
+@media(max-width:600px){
+  header h1{font-size:1.4rem}
+  .card{padding:22px 18px}
+  .card h2{font-size:1.15rem}
+  .coda{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>元知识详解：同一篇论文，不同的答案</h1>
+<div class="meta">2026 年 8 月 21 日 · 跨学科核心概念</div>
+<div class="day">Day 73</div>
+<div class="tags">
+<span class="tag">证据解读</span>
+<span class="tag alt">科学传播</span>
+<span class="tag green">计量口径</span>
+<span class="tag warm">因果推断</span>
+</div>
+</header>
+<div class="card">
+<h2>摘要不是结果的摘要</h2>
+<div class="en">Abstract ≠ Findings</div>
+<div class="subfield">论文最常被读的部位，也是最少被核对的部位</div>
+<div class="section insight">
+<span class="label">核心洞察</span>
+<p>我们默认摘要是正文的忠实压缩，可摘要是论文里唯一为「被读到」而写的部位。一项关于指数成分调整效应的研究，摘要写着删除带来约 +0.1%，同一篇的第一张表写着 -0.62%——不是量级出入，是符号相反。另一项关于交易所交易基金的研究，摘要给出「16%」的波动率增幅，正文里那是「标准差的 16%」，换算下来约二十个基点；而发表版把正文中解释这一点的那句删掉了。绝大多数二手引用只走到摘要为止——失真不必等到转述环节，它在论文内部就已完成。</p>
+</div>
+<div class="section">
+<span class="label">机制</span>
+<p>三股力叠加。一是分工：摘要往往最后写、由通讯作者定稿，表格由做分析的人产出，两者的逐格核对没人负责，同行评议也极少做。二是激励：摘要决定论文被不被点开、被不被写进新闻稿，任何让结论更干净的措辞都在被合法地奖励。三是压缩有损：把「在某个子样本、控制某组变量后、以某个代理度量」的条件句压成一句陈述，条件先掉、限定词后掉，剩下一个更强也更易被误用的句子。这类失真不留痕迹：摘要读起来完全自洽，只有翻到表格才看得见裂缝。</p>
+</div>
+<div class="section">
+<span class="label">反直觉例子</span>
+<p>对医学期刊的多次系统抽查反复发现同一件事：相当比例的论文，摘要与正文结果对不上——有的把主要结局换成了更好看的次要结局，有的把边缘显著写成明确结论，有的报告了正文里根本找不到的数字。结论稳定到期刊为此专门制定了摘要撰写规范。留意它真正的含义：这不是造假论文的特征，而是通过了同行评议的正常论文的常态。</p>
+</div>
+<div class="section">
+<span class="label">跨学科迁移</span>
+<p>软件领域的同构物是 README 与代码：README 描述意图，代码执行现实，两者漂移速度不同。财报里「调整后」口径的每一次调整都写在附注，而市场只读标题那一行。大模型的模型卡也一样：榜单分数印在开头，评测协议藏在后面。</p>
+</div>
+<div class="section">
+<span class="label">BigCat 应用</span>
+<p>引用论文做技术决策时立一条规矩：任何要进入决策的数字，必须在正文里指出位置——第几张表、哪一行、哪个模型设定；指不出来就不许写进文档。它筛掉的是「摘要级证据」，而技术选型里被推翻得最惨的往往正是这一类。</p>
+</div>
+<div class="section question">
+<span class="label">思考题</span>
+<p>你上一次因为一篇论文改变技术判断，翻过它的结果表吗？如果没有，你被说服的到底是那项研究，还是那段摘要？</p>
+</div>
+</div>
+<div class="card">
+<h2>数字的版本漂移</h2>
+<div class="en">Version Drift</div>
+<div class="subfield">你引的那个数，可能属于一份作者已经改掉的稿子</div>
+<div class="section insight">
+<span class="label">核心洞察</span>
+<p>工作稿与发表版之间隔着一轮审稿修改，数字会在这一轮里变：15% 改成 11%，37.8% 改成 33.5%。作者视之为正常的稿件改进，无须声张；问题是工作稿在这一两年里已被媒体报道、写进幻灯片、写进别人的引言。于是同一个发现有两个版本同时流通，而旧的那个通常传得更广——它更早、更响，数字也更大。</p>
+</div>
+<div class="section">
+<span class="label">机制</span>
+<p>时间差是结构性的。预印本或工作论文在发表前一两年就公开，那正是话题最热、最容易被引用的窗口；等发表版把数字修正过来，注意力早已转移。引用链一旦形成就有惯性：甲引工作稿，乙引甲，丙引乙，到丙那里没人回头核对源头，而每一层都显得有出处。更隐蔽的是静默修改：发表版删掉某句限定、换了某个口径，却没有任何变更说明。正式撤稿至少还有醒目标记，版本漂移完全没有。</p>
+</div>
+<div class="viz">
+<div class="viz-title">▸ 两个版本，一条单向的引用链</div>
+<svg viewbox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+<text fill="#e85a4f" font-size="9" font-weight="700" x="6" y="16">旧数字仍在传播</text>
+<line stroke="#e85a4f" stroke-width="2" x1="70" x2="278" y1="46" y2="46"></line>
+<circle cx="70" cy="46" fill="#e85a4f" r="5"></circle>
+<circle cx="140" cy="46" fill="#e85a4f" r="3.5"></circle>
+<circle cx="205" cy="46" fill="#e85a4f" r="3.5"></circle>
+<circle cx="268" cy="46" fill="#e85a4f" r="3.5"></circle>
+<text fill="#5a5a6a" font-size="9" text-anchor="end" x="62" y="50">工作稿 15%</text>
+<text fill="#8a8a9a" font-size="8.5" text-anchor="middle" x="140" y="36">新闻报道</text>
+<text fill="#8a8a9a" font-size="8.5" text-anchor="middle" x="205" y="36">二手引用</text>
+<text fill="#8a8a9a" font-size="8.5" text-anchor="middle" x="266" y="36">团队文档</text>
+<line stroke="#c9c4bc" stroke-dasharray="3 3" stroke-width="1" x1="70" x2="70" y1="54" y2="106"></line>
+<text fill="#8a8a9a" font-size="8.5" x="78" y="84">审稿后修正为 11%</text>
+<circle cx="70" cy="114" fill="#3a86ff" r="5"></circle>
+<line stroke="#3a86ff" stroke-width="2" x1="70" x2="150" y1="114" y2="114"></line>
+<text fill="#5a5a6a" font-size="9" text-anchor="end" x="62" y="118">发表版 11%</text>
+<text fill="#8a8a9a" font-size="8.5" x="158" y="117">引用寥寥</text>
+</svg>
+<div class="viz-legend">
+<span><i style="background:#e85a4f"></i>工作稿（先出现，传得远）</span>
+<span><i style="background:#3a86ff"></i>发表版（已修正，少人回看）</span>
+</div>
+<div class="viz-note">两版各有独立编号，检索时先撞见的往往是被引更多的那个旧版</div>
+</div>
+<div class="section">
+<span class="label">反直觉例子</span>
+<p>同一份研究的两个版本可以并存多年，且都能被合法引用：工作稿有稳定编号，发表版另有编号，检索时先出现的往往是被引更多的旧版。这意味着「这个数字有出处」和「这个数字是当前版本」是两件事——而且出处越硬、越权威，越容易让人省掉核对这一步。可核查性反而成了不核查的理由。</p>
+</div>
+<div class="section">
+<span class="label">跨学科迁移</span>
+<p>技术文档里，旧版本页面常年被搜索引擎排在前面，团队照着两年前的配置示例踩坑。数据仓库里是口径变更：指标定义改了，旧看板还按老逻辑跑，两个数并存于同一场会议。模型评测同理——一个分数属于哪一版权重、哪一版评测脚本，往往没人记录。</p>
+</div>
+<div class="section">
+<span class="label">BigCat 应用</span>
+<p>决策文档里写外部数字时，连着写清「哪一版、什么时候取的」。这不是学术洁癖，是给未来的自己留追溯入口：半年后有人问「这个 30% 还成立吗」，带版本标记的数字十分钟能验证，不带的只能整个重做。成本在写的那三秒。</p>
+</div>
+<div class="section question">
+<span class="label">思考题</span>
+<p>你团队文档里被引用最多的那个外部数字，出自预印本还是发表版？你上一次核对它是什么时候？</p>
+</div>
+</div>
+<div class="card">
+<h2>代理族与构造物</h2>
+<div class="en">Proxy Families and Constructed Numbers</div>
+<div class="subfield">同一张表里的五个数，只有一个上了标题</div>
+<div class="section insight">
+<span class="label">核心洞察</span>
+<p>一个概念常常对应一族代理度量，作者把它们都跑一遍列进同一张表——这本身是透明的做法。但摘要只放得下一个数。当同一张表上的五个代理从 13.31% 一路排到 33.5%，而进入摘要和新闻稿的是最大的那个、作者在正文自称首选的却是中间那个，透明度就被标题抵消了。再进一步：有些「数」根本不是估计值，而是构造物——若干度量等权平均出的那个百分比看起来像测量结果，实为一次加权选择的产物；改用标准差归一化，同一批数字就从四分之一变成六分之一。</p>
+</div>
+<div class="section">
+<span class="label">机制</span>
+<p>代理族的散布本身携带信息：散布小说明结论不依赖度量选择，散布大说明结论主要由口径决定。摘要只报一个点，恰好抹掉了这个往往比点估计更重要的信息。构造物的问题深一层：合成指标的每一步——选哪些分量、如何标准化、怎么加权——都是研究者自由度，而这些选择通常只写在方法或附录里。等权平均隐含「每个分量同等重要且量纲可比」这一强假设，几乎从不被检验。于是读者看到一个带两位小数的百分比，本能地当成测量，它其实是一次建模。</p>
+</div>
+<div class="viz">
+<div class="viz-title">▸ 同一张表里的五个代理</div>
+<svg viewbox="0 0 300 128" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#e8e2d8" stroke-width="1.5" x1="34" x2="278" y1="72" y2="72"></line>
+<circle cx="40" cy="72" fill="#c9c4bc" r="4"></circle>
+<circle cx="98" cy="72" fill="#c9c4bc" r="4"></circle>
+<circle cx="156" cy="72" fill="#52b788" r="5.5"></circle>
+<circle cx="212" cy="72" fill="#c9c4bc" r="4"></circle>
+<circle cx="272" cy="72" fill="#e85a4f" r="5.5"></circle>
+<text fill="#5a5a6a" font-size="9" text-anchor="middle" x="40" y="90">13.31%</text>
+<text fill="#5a5a6a" font-size="9" text-anchor="middle" x="268" y="90">33.5%</text>
+<text fill="#52b788" font-size="8.5" font-weight="700" text-anchor="middle" x="156" y="56">作者正文首选</text>
+<text fill="#e85a4f" font-size="8.5" font-weight="700" text-anchor="end" x="286" y="56">进了摘要与新闻稿</text>
+<text fill="#8a8a9a" font-size="8.5" x="34" y="112">同一批数据 · 同一张表 · 口径不同</text>
+</svg>
+<div class="viz-legend">
+<span><i style="background:#52b788"></i>作者首选口径</span>
+<span><i style="background:#e85a4f"></i>被传播的口径</span>
+</div>
+<div class="viz-note">五个数都公开了，可流向世界的只有最大的那一个</div>
+</div>
+<div class="section">
+<span class="label">反直觉例子</span>
+<p>值得注意的是，作者往往没有隐瞒任何东西：五个代理都在表里，首选口径在正文写明，归一化方式列在方法部分。信息全部公开，失真照样发生——因为传播渠道只搬运摘要里那一个数。可见「公开全部分析」不足以防止误读，还需要「主结论只能用事先声明的那个口径」。临床研究要求预注册锁定主要结局正是同一个道理：约束的不是分析的自由，是事后挑选的自由。</p>
+</div>
+<div class="section">
+<span class="label">跨学科迁移</span>
+<p>机器学习的基准报告是最近的同构物：十个任务里报最好的那个，或者报十个的平均分——后者同样是构造物，换一种归一化排名就重排。大学排名的权重一改名次就换，而权重表从不上头条。绩效考核的综合分也一样：分量与权重决定谁排在前面，讨论却总围绕最终那个分数。</p>
+</div>
+<div class="section">
+<span class="label">BigCat 应用</span>
+<p>评估 AI 编码工具时你一定会得到一族度量：完成时间、评审轮次、缺陷率、主观满意度。先定一条规矩：拿到数据之前写下哪一个是主要指标，其余都算辅助。数据出来之后再挑，得到的不是结论，是一次自我说服。若要报综合分，就同时报各分量的散布——散布本身才是它该不该被信任的证据。</p>
+</div>
+<div class="section question">
+<span class="label">思考题</span>
+<p>你最近汇报里的某个综合分，把权重换一种同样合理的设法，排序会变吗？如果会，你在汇报里说明过权重是怎么定的吗？</p>
+</div>
+</div>
+<div class="card">
+<h2>消失的机制章节</h2>
+<div class="en">The Deleted Mechanism Section</div>
+<div class="subfield">发表流程会剥掉解释，只留下关联</div>
+<div class="section insight">
+<span class="label">核心洞察</span>
+<p>有些论文的工作稿里有整整一节讲机制：效应经由什么渠道产生、排除了哪些替代解释。发表版里这一节被整节删除——多半为篇幅，或因审稿人认为该部分证据不够强。剩下的是一个干净的约简式关联：X 与 Y 相关多少。而读者，尤其是二手读者，会自动把它读成因果。被删掉的恰恰是唯一能支撑因果读法的部分，删除之后因果解读反而更畅通无阻——再没有一节文字提醒你机制尚未落实。</p>
+</div>
+<div class="section">
+<span class="label">机制</span>
+<p>约简式估计只回答「总效应有多大」，不回答「经由什么」。机制章节把总效应拆开、检验中介路径、排除混杂渠道；它一旦不在，因果主张就只能由研究设计本身承担——自然实验、工具变量、断点回归——而设计的可信度写在方法里，读的人更少。这里还有一重筛选：机制分析常显示效应比约简式估计小、或只在部分渠道成立，这类不利结果最容易被审稿意见和篇幅要求挤掉。于是发表流程系统性地偏向保留干净的关联、删掉复杂的机制。</p>
+</div>
+<div class="section">
+<span class="label">反直觉例子</span>
+<p>结果是一种奇特的倒置：论文越把机制讲清楚，越暴露不确定性，越难发表也越难传播；越是只报一个干净的关联，越容易被当成因果证据反复引用。这解释了为什么大量被广泛引用的「X 导致 Y」并无对应的机制证据——不是没人做过，而是做过的那部分在发表管道里被削掉了。删除不留痕迹，读者看到的是一篇结构完整、行文利落的论文。</p>
+</div>
+<div class="section">
+<span class="label">跨学科迁移</span>
+<p>事故调查报告里，根因分析一旦被删、只留下相关因素清单，读者就会自行补上因果并据此改流程。A/B 测试只报总指标提升、不报漏斗分解时，团队一定会编出一个机制故事且深信不疑。医学里的替代终点是同构问题：指标改善了，通往硬结局的那段链条没人验证。可观测性也是——只有指标曲线、没有链路追踪时，人会把时间上的相关当成因果。</p>
+</div>
+<div class="section">
+<span class="label">BigCat 应用</span>
+<p>写实验结论时保留那一节「我们检查过的替代解释」，哪怕结论是「无法排除」。它让文档更长、结论看起来更弱，却是这份文档半年后还站得住的唯一原因。读别人的报告时先找这一节；找不到就把结论降级成相关——降级是免费的，而误把相关当因果的代价通常要一个季度才显形。</p>
+</div>
+<div class="section question">
+<span class="label">思考题</span>
+<p>你团队上一次说「某个改动带来了指标提升」，机制说清楚了吗？如果说不清，你愿意把它改写成「相关」而不是「带来」吗？</p>
+</div>
+</div>
+<div class="coda">
+<h3>读论文的四步核对链</h3>
+<p>一个数字要进入你的决策之前，先问它是从论文的哪个部位说出来的：</p>
+<ol>
+<li>我读的是哪一版——工作稿还是发表版？</li>
+<li>摘要里这个数，在正文哪张表？符号和量级对得上吗？</li>
+<li>它是估计值，还是若干度量合成出来的构造物？</li>
+<li>作者自己首选的口径是哪一个，和被传播的那个是同一个吗？</li>
+</ol>
+<p>Day 70 问尺子有多严，Day 72 问你站在坐标系的哪一格，这一期问：这句话由论文的哪个部位说出。三问合起来，才能在不重做研究的前提下判断一个数字值不值得进入决策。</p>
+</div>
+<div class="nav"></div>
+</div>
+<script src="https://hub.cissychen.com/comments.js" defer></script>
+<script src="https://hub.cissychen.com/search.js" defer></script>
+<script src="https://hub.cissychen.com/index-button.js" defer></script>
+<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
+</body>
+</html>
